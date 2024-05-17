@@ -1,0 +1,68 @@
+{
+	"editor.try-welcome": {
+		"defaultMessage": "这个编辑区域展示了一些思维导图编辑器的功能！"
+	},
+	"editor.try-welcome-description": {
+		"defaultMessage": "注册后可以免费创建、分享和发布无限数量的思维导图。"
+	},
+	"editor.try-welcome-mobile": {
+		"defaultMessage": "这个版本空间展示了一些思维导图功能！"
+	},
+	"editor.try-welcome-description-mobile": {
+		"defaultMessage": "注册以开始免费创建、共享和发布无限数量的思维导图。 移动设备支持有限的思维导图编辑功能。 使用桌面浏览器获得完整的编辑器功能。"
+	},
+	"editor.edit-mobile": {
+		"defaultMessage": "移动设备注意事项."
+	},
+	"editor.edit-description-mobile": {
+		"defaultMessage": "移动设备支持有限的思维导图编辑功能。 使用桌面浏览器获得完整的编辑器功能。"
+	},
+	"login.signup": {
+		"defaultMessage": "注册"
+	},
+	"action.share": {
+		"defaultMessage": "分享"
+	},
+    "zoom-panel.tooltip-keyboard": {
+        "defaultMessage": "键盘"
+    },
+    "editor-panel.tooltip-theme": {
+        "defaultMessage": "主题"
+    },
+    "editor-panel.theme-title": {
+        "defaultMessage": "主题"
+    },
+    "editor-panel.tooltip-connection-style-arc": {
+        "defaultMessage": "弧"
+    },
+    "editor-panel.tooltip-topic-share-none": {
+        "defaultMessage": "没有形状"
+    },
+	"editor-panel.tooltip-connection-color": {
+        "defaultMessage": "颜色"
+    },
+    "editor-panel.tooltip-connection-color-default": {
+        "defaultMessage": "默认颜色"
+    },
+    "editor-panel.tooltip-connection-style": {
+        "defaultMessage": "连接方式"
+    },
+    "editor-panel.tooltip-connection-style-curved-thick": {
+        "defaultMessage": "宽曲线"
+    },
+    "editor-panel.tooltip-connection-style-curved-thin": {
+        "defaultMessage": "细曲线"
+    },
+    "editor-panel.tooltip-topic-border-color-default": {
+        "defaultMessage": "默认边框颜色"
+    },
+    "editor-panel.tooltip-topic-fill-color": {
+        "defaultMessage": "填充颜​​色"
+    },
+    "editor-panel.tooltip-topic-fill-color-default": {
+        "defaultMessage": "默认填充颜色"
+    },
+    "editor-panel.tooltip-topic-share-rounded": {
+        "defaultMessage": "圆形"
+    }
+}
