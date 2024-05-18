@@ -5877,6 +5877,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^9.0.8":
+  version: 9.0.8
+  resolution: "@types/uuid@npm:9.0.8"
+  checksum: b8c60b7ba8250356b5088302583d1704a4e1a13558d143c549c408bf8920535602ffc12394ede77f8a8083511b023704bc66d1345792714002bfa261b17c5275
+  languageName: node
+  linkType: hard
+
 "@types/webpack-env@npm:^1.16.0":
   version: 1.18.0
   resolution: "@types/webpack-env@npm:1.18.0"
@@ -6670,6 +6677,7 @@ __metadata:
     "@storybook/manager-webpack4": ^6.5.16
     "@storybook/testing-library": ^0.2.2
     "@types/jquery": ^3.5.29
+    "@types/uuid": ^9.0.8
     "@wisemapping/core-js": "workspace:*"
     "@wisemapping/web2d": "workspace:*"
     babel-loader: ^9.1.3
@@ -6680,6 +6688,7 @@ __metadata:
     jquery: 3.7.1
     lodash: ^4.17.21
     mocha: ^10.4.0
+    uuid: ^9.0.1
     xml-formatter: ^3.6.2
   languageName: unknown
   linkType: soft
@@ -24374,6 +24383,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 39931f6da74e307f51c0fb463dc2462807531dc80760a9bff1e35af4316131b4fc3203d16da60ae33f07fdca5b56f3f1dd662da0c99fea9aaeab2004780cc5f4
   languageName: node
   linkType: hard
 

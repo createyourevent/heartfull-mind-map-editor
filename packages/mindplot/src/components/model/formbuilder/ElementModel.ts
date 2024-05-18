@@ -1,21 +1,24 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { v4 as uuidv4 } from 'uuid';
 import { ElementType } from './ElementType';
 
-class ElementModel {
-  private _id: number;
+export default class ElementModel {
+  private _id: string;
 
   private _type: ElementType;
 
   private _attributes: object;
 
   constructor(type: ElementType, attributes: object) {
+    // Generiere eine eindeutige ID für das Element
+    const newUuid: string = uuidv4();
+    this._id = newUuid;
     this._type = type;
     this._attributes = attributes;
-    // Generiere eine eindeutige ID für das Element
-    this._id = 1;
   }
 
   // Getter und Setter für Eigenschaften
-  get id(): number { return this._id; }
+  get id(): string { return this._id; }
 
   get type(): ElementType { return this._type; }
 
@@ -30,5 +33,3 @@ class ElementModel {
     return true;
   }
 }
-
-export default ElementModel;
