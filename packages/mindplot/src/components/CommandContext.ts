@@ -110,5 +110,11 @@ class CommandContext {
       position,
     });
   }
+
+  deleteElements(_topicIds: number[], _elementType: string) {
+  }
+  
+  addElements(_topicIds: number[], _elementType: string, _attributes: object) {
+  }
 }
 export default CommandContext;

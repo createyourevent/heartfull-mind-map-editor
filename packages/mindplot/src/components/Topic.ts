@@ -45,10 +45,17 @@ import DragTopic from './DragTopic';
 import ThemeFactory from './theme/ThemeFactory';
 import TopicShape from './shape/TopicShape';
 import TopicShapeFactory from './shape/TopicShapeFactory';
+import ElementModel from './model/formbuilder/ElementModel';
 
 const ICON_SCALING_FACTOR = 1.3;
 
 abstract class Topic extends NodeGraph {
+  removeElement(_elementModel: ElementModel) {
+      throw new Error('Method not implemented.');
+  }
+  addElement(_elementModel: ElementModel) {
+      throw new Error('Method not implemented.');
+  }
   private _innerShape: TopicShape | null;
 
   private _relationships: Relationship[];
