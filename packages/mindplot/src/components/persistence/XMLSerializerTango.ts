@@ -29,6 +29,8 @@ import { FontWeightType } from '../FontWeightType';
 import { FontStyleType } from '../FontStyleType';
 import { TopicShapeType } from '../model/INodeModel';
 import ThemeType from '../model/ThemeType';
+import ElementModelFactory from '../model/formbuilder/ElementModelFactory';
+import { ElementType } from '../model/formbuilder/ElementType';
 
 class XMLSerializerTango implements XMLMindmapSerializer {
   private static MAP_ROOT_NODE = 'map';
@@ -179,6 +181,12 @@ class XMLSerializerTango implements XMLMindmapSerializer {
     const metadata = topic.getMetadata();
     if ($defined(metadata)) {
       parentTopic.setAttribute('metadata', metadata);
+    }
+
+    // Serialize element ...
+    const element = topic.getElement();
+    if (element) {
+      parentTopic.setAttribute('element', element.type);
     }
 
     // Serialize features ...
@@ -390,6 +398,11 @@ class XMLSerializerTango implements XMLMindmapSerializer {
       topic.setBorderColor(borderColor);
     }
 
+    const elementType: ElementType = <ElementType>domElem.getAttribute('elementtype');
+    if (elementType) {
+      const elementModel = ElementModelFactory.createElementModel(elementType, null);
+      topic.setElement(elementModel);
+    }
     const order = domElem.getAttribute('order');
     if (order !== null && order !== 'NaN') {
       // Hack for broken maps ...

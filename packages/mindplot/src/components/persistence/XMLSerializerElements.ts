@@ -9,8 +9,8 @@ export default class XMLSerializerElements extends XMLSerializerTango {
     const formElementsNode = document.createElement('form-elements');
 
     // Fügen Sie die Form- und Controlselemente als Kindelemente hinzu
-    formElementsNode.appendChild(this.serializeFormElement1());
-    formElementsNode.appendChild(this.serializeFormElement2());
+    // formElementsNode.appendChild(this.serializeFormElement1());
+    // formElementsNode.appendChild(this.serializeFormElement2());
 
     // Fügen Sie den formElementsNode an das Dokument an
     document.documentElement.appendChild(formElementsNode);
@@ -38,8 +38,6 @@ export default class XMLSerializerElements extends XMLSerializerTango {
   }
 
   deserializeFormElement(mindmap: Mindmap, formElementNode: Node) {
-    // Analysieren Sie den XML-Knoten und erstellen Sie die entsprechenden Form- und Controlselemente
-    // Fügen Sie diese dann zur Mindmap hinzu
-    // ...
+    console.log(mindmap, formElementNode);
   }
 }

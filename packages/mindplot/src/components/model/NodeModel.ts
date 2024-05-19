@@ -22,6 +22,9 @@ import FeatureModelFactory from './FeatureModelFactory';
 import FeatureModel from './FeatureModel';
 import Mindmap from './Mindmap';
 import FeatureType from './FeatureType';
+import ElementModel from './formbuilder/ElementModel';
+import { ElementType } from './formbuilder/ElementType';
+import ElementModelFactory from './formbuilder/ElementModelFactory';
 
 class NodeModel extends INodeModel {
   private _properties: Record<string, string | number | boolean>;
@@ -30,6 +33,8 @@ class NodeModel extends INodeModel {
   private _children: NodeModel[];
 
   private _features: FeatureModel[];
+
+  private _element: ElementModel | null;
 
   // eslint-disable-next-line no-use-before-define
   private _parent: NodeModel | null;
@@ -44,6 +49,7 @@ class NodeModel extends INodeModel {
 
     this._children = [];
     this._features = [];
+    this._element = null;
     this._parent = null;
   }
 
@@ -96,6 +102,36 @@ class NodeModel extends INodeModel {
     const result = this._features.filter((feature) => feature.getId() === id);
     $assert(result.length === 1, `Feature could not be found:${id}`);
     return result[0];
+  }
+
+  /**
+   * @param type
+   * @param attributes
+   * @return {mindplot.model.formbuilder.ElementModel} the created element model
+   */
+  createElement(element: ElementType, attributes): ElementModel {
+    return ElementModelFactory.createElementModel(element, attributes);
+  }
+
+  addElement(element: ElementModel): void {
+    $assert(element, 'element can not be null');
+    this._element = element;
+  }
+
+  getElement(): ElementModel | null {
+    return this._element;
+  }
+
+  setElement(elementModel: ElementModel | null): void {
+    if (elementModel === null && this._element !== null) {
+      this._element = null;
+    } else if (elementModel !== null) {
+      this._element = elementModel;
+    }
+  }
+
+  removeElement(): void {
+    this._element = null;
   }
 
   getPropertiesKeys() {
