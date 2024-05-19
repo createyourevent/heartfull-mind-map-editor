@@ -152,7 +152,7 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Textfield',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen eines Textfelds
+          
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
