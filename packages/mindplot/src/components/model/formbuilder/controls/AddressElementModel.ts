@@ -1,7 +1,7 @@
 import ElementModel from '../ElementModel';
 import { ElementType } from '../ElementType';
 
-export default class CheckboxElementModel extends ElementModel {
+export default class AddressElementModel extends ElementModel {
   private _name: string;
 
   private _defaultValue: string;
