@@ -42,6 +42,10 @@ class ImageTopicShape extends Image {
   setPosition(): void {
     // Ignore ...
   }
+
+  getImageUrl(): string {
+    return this._topic.getModel().getImageUrl();
+  }
 }
 
 export default ImageTopicShape;

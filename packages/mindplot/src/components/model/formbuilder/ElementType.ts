@@ -9,4 +9,5 @@ export type ElementType =
   | 'chips'
   | 'multicheckbox'
   | 'ratings'
+  | 'date'
   | 'time';

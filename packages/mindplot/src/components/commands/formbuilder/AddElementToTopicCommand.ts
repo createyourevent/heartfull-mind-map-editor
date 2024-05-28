@@ -17,8 +17,9 @@ class AddElementToTopicCommand extends Command {
   execute(commandContext: CommandContext): void {
     const topics = commandContext.findTopics(this._topicIds);
     topics.forEach((topic) => {
-    // Füge das ElementModel zum Topic hinzu
-    topic.addElement(this._elementModel);
+      // Füge das ElementModel zum Topic hinzu
+      topic.addElement(this._elementModel);
+      topic.redraw();
     });
   }
 

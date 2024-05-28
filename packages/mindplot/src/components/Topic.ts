@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /*
  *    Copyright [2021] [wisemapping]
  *
@@ -46,16 +47,37 @@ import ThemeFactory from './theme/ThemeFactory';
 import TopicShape from './shape/TopicShape';
 import TopicShapeFactory from './shape/TopicShapeFactory';
 import ElementModel from './model/formbuilder/ElementModel';
+import FormElementIcon from './icons/FormElementIcon';
+import TopicElementFactory from './icons/TopicElementIconFactory';
+import TopicElementIconFactory from './icons/TopicElementIconFactory';
 
 const ICON_SCALING_FACTOR = 1.3;
 
 abstract class Topic extends NodeGraph {
+  addElement(elementModel: ElementModel): FormElementIcon {
+    const iconGroup = this.getOrBuildIconGroup();
+    this.closeEditors();
+
+    // Update model ...
+    const model = this.getModel();
+    model.addElement(elementModel);
+
+    const result: FormElementIcon = TopicElementFactory.createElementIcon(this, elementModel);
+    iconGroup.addIcon(result, !this.isReadOnly());
+
+    this.redraw();
+    return result;
+  }
+
   removeElement(_elementModel: ElementModel) {
-      throw new Error('Method not implemented.');
+    const iconGroup = this.getOrBuildIconGroup();
+    this.closeEditors();
+
+    // Update model ...
+    iconGroup.removeIconByModel(_elementModel);
+    this.redraw();
   }
-  addElement(_elementModel: ElementModel) {
-      throw new Error('Method not implemented.');
-  }
+
   private _innerShape: TopicShape | null;
 
   private _relationships: Relationship[];
@@ -272,6 +294,12 @@ abstract class Topic extends NodeGraph {
       const addRemoveAction = type === 'eicon' || type === 'icon';
       result.addIcon(icon, addRemoveAction && !this.isReadOnly());
     });
+
+    const elementModel = model.getElement();
+    if (elementModel !== null) {
+      const elementIcon = TopicElementIconFactory.createElementIcon(this, elementModel);
+      result.addIcon(elementIcon, !this.isReadOnly());
+    }
 
     return result;
   }

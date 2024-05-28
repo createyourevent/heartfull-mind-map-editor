@@ -24,11 +24,17 @@ import SizeType from './SizeType';
 import FeatureModel from './model/FeatureModel';
 import Icon from './Icon';
 import PositionType from './PositionType';
+import ElementModel from './model/formbuilder/ElementModel';
 
 const ORDER_BY_TYPE = new Map<string, number>();
 ORDER_BY_TYPE.set('icon', 0);
 ORDER_BY_TYPE.set('note', 1);
 ORDER_BY_TYPE.set('link', 2);
+
+const ORDER_BY_ELEMENT = new Map<string, number>();
+ORDER_BY_ELEMENT.set('', 0);
+ORDER_BY_ELEMENT.set('', 1);
+ORDER_BY_ELEMENT.set('', 2);
 
 class IconGroup {
   private _icons: Icon[];
@@ -89,10 +95,18 @@ class IconGroup {
 
     icon.setGroup(this);
     icons.push(icon);
-    this._icons = icons.sort(
-      (a, b) =>
-        ORDER_BY_TYPE.get(a.getModel().getType())! - ORDER_BY_TYPE.get(b.getModel().getType())!,
-    );
+
+    // Überprüfen, ob es sich um ein FeatureModel oder ElementModel handelt
+    if (icon.getModel() instanceof FeatureModel) {
+      // Sortieren für FeatureModels
+      this._icons = icons.sort(
+        (a, b) =>
+          ORDER_BY_TYPE.get(a.getModel().getType())! - ORDER_BY_TYPE.get(b.getModel().getType())!,
+      );
+    } else if (icon.getModel() instanceof ElementModel) {
+      // Keine Sortierung für ElementModels
+      this._icons = icons;
+    }
 
     // Add all the nodes back ...
     this._resize(this._icons.length);
@@ -108,7 +122,7 @@ class IconGroup {
     }
   }
 
-  private _findIconFromModel(iconModel: FeatureModel): Icon {
+  private _findIconFromModel(iconModel: FeatureModel | ElementModel): Icon {
     let result: Icon | null = null;
 
     this._icons.forEach((icon) => {
@@ -127,7 +141,7 @@ class IconGroup {
   }
 
   /** */
-  removeIconByModel(featureModel: FeatureModel): void {
+  removeIconByModel(featureModel: FeatureModel | ElementModel): void {
     $assert(featureModel, 'featureModel can not be null');
 
     const icon = this._findIconFromModel(featureModel);

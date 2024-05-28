@@ -75,9 +75,6 @@ import MulticheckboxIcon from '../../../images/controls/multicheckbox.svg';
 import RatingsIcon from '../../../images/controls/ratings.svg';
 import TimeIcon from '../../../images/controls/time.svg';
 
-
-
-
 const keyTooltip = (msg: string, key: string): string => {
   const isMac = window.navigator.platform.toUpperCase().indexOf('MAC') >= 0;
   return `${msg} (${isMac ? '⌘' : 'Ctrl'} + ${key})`;
@@ -152,9 +149,15 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Textfield',
         }),
         onClick: () => {
-          
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'textfield', {}
+          );
         },
-        selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
       {
         icon: <img src={TextareaIcon} />,
@@ -163,9 +166,15 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Textarea',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen eines Textareas
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'textarea', {}
+          );
         },
-        selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
       {
         icon: <img src={CheckboxIcon} />,
@@ -174,9 +183,15 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Checkbox',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen einer Checkbox
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'checkbox', {}
+          );
         },
-        selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
       {
         icon: <img src={RadioIcon} />,
@@ -185,7 +200,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Radio',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen eines Radiobuttons
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'radio', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },

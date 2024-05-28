@@ -20,6 +20,7 @@ import IconGroup from './IconGroup';
 import FeatureModel from './model/FeatureModel';
 import PositionType from './PositionType';
 import SizeType from './SizeType';
+import ElementModel from './model/formbuilder/ElementModel';
 
 interface Icon {
   getElement(): Group | Image;
@@ -36,7 +37,7 @@ interface Icon {
 
   remove(): void;
 
-  getModel(): FeatureModel;
+  getModel(): FeatureModel | ElementModel;
 }
 
 export default Icon;

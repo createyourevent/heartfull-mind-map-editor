@@ -90,6 +90,12 @@ abstract class ActionDispatcher extends EventDispispatcher<LayoutEventBusType> {
 
   abstract removeFeatureFromTopic(topicId: number, featureId: number): void;
 
+  abstract addElementToTopic(topicIds: number[], type: string, attributes: object): void;
+
+  abstract changeElementToTopic(topicId: number, featureId: number, attributes: object): void;
+
+  abstract removeElementFromTopic(topicId: number, elementId: number): void;
+
   static setInstance = (dispatcher: ActionDispatcher) => {
     this._instance = dispatcher;
   };

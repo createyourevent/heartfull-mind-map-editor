@@ -398,9 +398,9 @@ class XMLSerializerTango implements XMLMindmapSerializer {
       topic.setBorderColor(borderColor);
     }
 
-    const elementType: ElementType = <ElementType>domElem.getAttribute('elementtype');
+    const elementType: ElementType = <ElementType>domElem.getAttribute('element');
     if (elementType) {
-      const elementModel = ElementModelFactory.createElementModel(elementType, null);
+      const elementModel = ElementModelFactory.createElementModel(elementType, {});
       topic.setElement(elementModel);
     }
     const order = domElem.getAttribute('order');

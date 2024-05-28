@@ -38,6 +38,8 @@ import PositionType from './PositionType';
 import { PivotType } from './RelationshipControlPoints';
 import { TopicShapeType } from './model/INodeModel';
 import { LineType } from './ConnectionLine';
+import AddElementToTopicCommand from './commands/formbuilder/AddElementToTopicCommand';
+import { ElementType } from './model/formbuilder/ElementType';
 
 class StandaloneActionDispatcher extends ActionDispatcher {
   private _actionRunner: DesignerActionRunner;
@@ -275,6 +277,20 @@ class StandaloneActionDispatcher extends ActionDispatcher {
   removeFeatureFromTopic(topicId: number, featureId: number) {
     const command = new RemoveFeatureFromTopicCommand(topicId, featureId);
     this.execute(command);
+  }
+
+  addElementToTopic(topicId: number[], type: string, attributes: object): void {
+    const elementType: ElementType = <ElementType>type;
+    const command = new AddElementToTopicCommand(topicId, elementType, attributes);
+    this.execute(command);
+  }
+
+  changeElementToTopic(topicId: number, featureId: number, attributes: object): void {
+    console.log(topicId, featureId, attributes);
+  }
+
+  removeElementFromTopic(topicId: number, featureId: number): void {
+    console.log(topicId, featureId);
   }
 
   /** */

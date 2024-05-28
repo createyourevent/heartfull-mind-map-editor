@@ -22,6 +22,7 @@ import SizeType from './SizeType';
 import FeatureModel from './model/FeatureModel';
 import Icon from './Icon';
 import PositionType from './PositionType';
+import ElementModel from './model/formbuilder/ElementModel';
 
 abstract class ImageIcon implements Icon {
   private _image: Image;
@@ -60,12 +61,9 @@ abstract class ImageIcon implements Icon {
     this._image.addEvent(type, fnc);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  remove() {
-    throw new Error('Unsupported operation');
-  }
+  abstract remove();
 
-  abstract getModel(): FeatureModel;
+  abstract getModel(): FeatureModel | ElementModel;
 
   static SIZE = 90;
 }

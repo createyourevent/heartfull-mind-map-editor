@@ -24,6 +24,14 @@ export default class ElementModel {
 
   get attributes(): object { return this._attributes; }
 
+  getId(): string {
+    return this._id;
+  }
+
+  getType(): ElementType {
+    return this._type;
+  }
+
   // Weitere Methoden für das Rendering, Validierung, etc.
   render(): string {
     return 'HAllo';

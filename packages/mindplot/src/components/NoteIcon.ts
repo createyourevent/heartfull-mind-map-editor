@@ -62,6 +62,10 @@ class NoteIcon extends ImageIcon {
   }
 
   static IMAGE_URL = NotesImage;
+
+  remove() {
+    throw new Error('Method not implemented.');
+  }
 }
 
 export default NoteIcon;

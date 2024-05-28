@@ -61,6 +61,10 @@ class LinkIcon extends ImageIcon {
     return this._linksModel;
   }
 
+  remove() {
+    throw new Error('Method not implemented.');
+  }
+
   static IMAGE_URL = LinksImage;
 }
 
