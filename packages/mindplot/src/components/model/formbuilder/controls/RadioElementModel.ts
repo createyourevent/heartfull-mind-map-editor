@@ -1,7 +1,7 @@
-import ElementModel from './ElementModel';
-import { ElementType } from './ElementType';
+import ElementModel from '../ElementModel';
+import { ElementType } from '../ElementType';
 
-export default class CheckboxElementModel extends ElementModel {
+export default class RadioElementModel extends ElementModel {
   private _name: string;
 
   private _defaultValue: string;
@@ -23,6 +23,6 @@ export default class CheckboxElementModel extends ElementModel {
 
   // Überschreiben der render()-Methode für Textfelder
   render(): string {
-    return `<input type="checkbox" name="${this._name}" value="${this._defaultValue}">`;
+    return `<input type="radio" name="${this._name}" value="${this._defaultValue}">`;
   }
 }

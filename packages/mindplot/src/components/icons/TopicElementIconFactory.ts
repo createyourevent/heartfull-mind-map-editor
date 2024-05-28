@@ -1,12 +1,14 @@
 import Topic from '../Topic';
-import CheckboxElementModel from '../model/formbuilder/CheckboxElementModel';
+import CheckboxElementModel from '../model/formbuilder/controls/CheckboxElementModel';
 import ElementModel from '../model/formbuilder/ElementModel';
-import TextareaElementModel from '../model/formbuilder/TextareaElementModel';
-import TextfieldElementModel from '../model/formbuilder/TextfieldElementModel';
-import CheckboxIcon from './CheckboxIcon';
+import RadioElementModel from '../model/formbuilder/controls/RadioElementModel';
+import TextareaElementModel from '../model/formbuilder/controls/TextareaElementModel';
+import TextfieldElementModel from '../model/formbuilder/controls/TextfieldElementModel';
+import CheckboxIcon from './controls/CheckboxIcon';
 import FormElementIcon from './FormElementIcon';
-import TextareaIcon from './TextareaIcon';
-import TextfieldIcon from './TextfieldIcon';
+import RadioIcon from './controls/RadioIcon';
+import TextareaIcon from './controls/TextareaIcon';
+import TextfieldIcon from './controls/TextfieldIcon';
 
 class TopicElementIconFactory {
   static createElementIcon(topic: Topic, model: ElementModel): FormElementIcon {
@@ -21,6 +23,9 @@ class TopicElementIconFactory {
         break;
       case 'checkbox':
         result = new CheckboxIcon(model as CheckboxElementModel, topic);
+        break;
+      case 'radio':
+        result = new RadioIcon(model as RadioElementModel, topic);
         break;
       default: {
         throw new Error('Unhandled element type');

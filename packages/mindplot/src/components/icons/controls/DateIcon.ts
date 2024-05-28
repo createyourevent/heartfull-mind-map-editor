@@ -1,17 +1,17 @@
-import FormElementIcon from './FormElementIcon';
-import TextfieldSvg from '../../../assets/icons/controls/radio.svg';
-import Topic from '../Topic';
-import ElementModel from '../model/formbuilder/ElementModel';
-import { $notify } from '../model/ToolbarNotifier';
-import { $msg } from '../Messages';
-import PersistenceManager from '../PersistenceManager';
+import FormElementIcon from '../FormElementIcon';
+import DateSvg from '../../../../assets/icons/controls/time.svg';
+import Topic from '../../Topic';
+import ElementModel from '../../model/formbuilder/ElementModel';
+import PersistenceManager from '../../PersistenceManager';
+import { $msg } from '../../Messages';
+import { $notify } from '../../model/ToolbarNotifier';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default class RadioIcon extends FormElementIcon {
-  static IMAGE_URL = TextfieldSvg;
+export default class DateIcon extends FormElementIcon {
+  static IMAGE_URL = DateSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(RadioIcon.IMAGE_URL, elementModel, topic);
+    super(DateIcon.IMAGE_URL, elementModel, topic);
     this.setModel(elementModel);
     this.setTopic(topic);
   }

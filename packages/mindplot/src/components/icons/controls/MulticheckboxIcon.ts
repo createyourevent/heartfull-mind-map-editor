@@ -1,17 +1,17 @@
-import FormElementIcon from './FormElementIcon';
-import CheckboxSvg from '../../../assets/icons/controls/checkbox.svg';
-import Topic from '../Topic';
-import ElementModel from '../model/formbuilder/ElementModel';
-import { $notify } from '../model/ToolbarNotifier';
-import { $msg } from '../Messages';
-import PersistenceManager from '../PersistenceManager';
+import FormElementIcon from '../FormElementIcon';
+import MulticheckboxSvg from '../../../../assets/icons/controls/multicheckbox.svg';
+import Topic from '../../Topic';
+import ElementModel from '../../model/formbuilder/ElementModel';
+import PersistenceManager from '../../PersistenceManager';
+import { $msg } from '../../Messages';
+import { $notify } from '../../model/ToolbarNotifier';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default class CheckboxIcon extends FormElementIcon {
-  static IMAGE_URL = CheckboxSvg;
+export default class MulticheckboxIcon extends FormElementIcon {
+  static IMAGE_URL = MulticheckboxSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(CheckboxIcon.IMAGE_URL, elementModel, topic);
+    super(MulticheckboxIcon.IMAGE_URL, elementModel, topic);
     this.setModel(elementModel);
     this.setTopic(topic);
   }

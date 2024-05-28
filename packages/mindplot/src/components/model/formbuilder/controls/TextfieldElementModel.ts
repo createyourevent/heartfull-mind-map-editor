@@ -1,5 +1,5 @@
-import ElementModel from './ElementModel';
-import { ElementType } from './ElementType';
+import ElementModel from '../ElementModel';
+import { ElementType } from '../ElementType';
 
 export default class TextfieldElementModel extends ElementModel {
   private _placeholder: string;

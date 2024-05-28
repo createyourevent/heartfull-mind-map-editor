@@ -1,9 +1,9 @@
-import CheckboxElementModel from './CheckboxElementModel';
+import CheckboxElementModel from './controls/CheckboxElementModel';
 import ElementModel from './ElementModel';
 import { ElementType } from './ElementType';
-import RadioElementModel from './RadioElementModel';
-import TextareaElementModel from './TextareaElementModel';
-import TextfieldElementModel from './TextfieldElementModel';
+import RadioElementModel from './controls/RadioElementModel';
+import TextareaElementModel from './controls/TextareaElementModel';
+import TextfieldElementModel from './controls/TextfieldElementModel';
 
 export default class ElementModelFactory {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

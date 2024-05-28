@@ -1,17 +1,17 @@
-import FormElementIcon from './FormElementIcon';
-import TextfieldSvg from '../../../assets/icons/controls/textfield.svg';
-import Topic from '../Topic';
-import ElementModel from '../model/formbuilder/ElementModel';
-import PersistenceManager from '../PersistenceManager';
-import { $msg } from '../Messages';
-import { $notify } from '../model/ToolbarNotifier';
+import FormElementIcon from '../FormElementIcon';
+import FieldsetSvg from '../../../../assets/icons/forms/fieldset.svg';
+import Topic from '../../Topic';
+import ElementModel from '../../model/formbuilder/ElementModel';
+import PersistenceManager from '../../PersistenceManager';
+import { $msg } from '../../Messages';
+import { $notify } from '../../model/ToolbarNotifier';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default class TextfieldIcon extends FormElementIcon {
-  static IMAGE_URL = TextfieldSvg;
+export default class FieldsetIcon extends FormElementIcon {
+  static IMAGE_URL = FieldsetSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(TextfieldIcon.IMAGE_URL, elementModel, topic);
+    super(FieldsetIcon.IMAGE_URL, elementModel, topic);
     this.setModel(elementModel);
     this.setTopic(topic);
   }

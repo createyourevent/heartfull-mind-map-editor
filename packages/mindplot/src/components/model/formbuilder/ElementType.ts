@@ -10,4 +10,8 @@ export type ElementType =
   | 'multicheckbox'
   | 'ratings'
   | 'date'
-  | 'time';
+  | 'time'
+  | 'form'
+  | 'page'
+  | 'fieldset'
+  | 'tabs';
