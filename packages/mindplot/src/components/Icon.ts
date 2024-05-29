@@ -17,10 +17,10 @@
  */
 import { Group, Image } from '@wisemapping/web2d';
 import IconGroup from './IconGroup';
-import FeatureModel from './model/FeatureModel';
+import FeatureModel from './shared/FeatureModel';
 import PositionType from './PositionType';
 import SizeType from './SizeType';
-import ElementModel from './model/formbuilder/ElementModel';
+import ElementModel from './shared/ElementModel';
 
 interface Icon {
   getElement(): Group | Image;

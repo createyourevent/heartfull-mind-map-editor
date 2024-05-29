@@ -2,7 +2,7 @@ import { $assert } from '@wisemapping/core-js';
 import SvgIconModel from './SvgIconModel';
 import LinkModel from './LinkModel';
 import NoteModel from './NoteModel';
-import FeatureModel from './FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import FeatureType from './FeatureType';
 import EmojiIconModel from './EmojiIconModel';
 

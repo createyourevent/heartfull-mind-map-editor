@@ -1,6 +1,6 @@
 import Topic from '../Topic';
 import CheckboxElementModel from '../model/formbuilder/controls/CheckboxElementModel';
-import ElementModel from '../model/formbuilder/ElementModel';
+import ElementModel from '../shared/ElementModel';
 import RadioElementModel from '../model/formbuilder/controls/RadioElementModel';
 import TextareaElementModel from '../model/formbuilder/controls/TextareaElementModel';
 import TextfieldElementModel from '../model/formbuilder/controls/TextfieldElementModel';

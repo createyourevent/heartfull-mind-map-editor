@@ -16,8 +16,8 @@
  *   limitations under the License.
  */
 import { $assert } from '@wisemapping/core-js';
-import FeatureType from './FeatureType';
-import IconModel from '../IconModel';
+import FeatureType from '../model/FeatureType';
+import IconModel from './IconModel';
 
 class FeatureModel extends IconModel {
   static _nextId = 0;
@@ -35,7 +35,7 @@ class FeatureModel extends IconModel {
    * assigns a unique id and the given type to the new model
    */
   constructor(type: FeatureType) {
-    super();
+    super(this.getIcon(), this.getTopic());
     $assert(type, 'type can not be null');
     this._id = FeatureModel._nextUUID();
 

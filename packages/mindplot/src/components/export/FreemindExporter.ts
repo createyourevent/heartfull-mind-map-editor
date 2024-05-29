@@ -20,7 +20,7 @@ import { Mindmap } from '../..';
 import INodeModel, { TopicShapeType } from '../model/INodeModel';
 import RelationshipModel from '../model/RelationshipModel';
 import SvgIconModel from '../model/SvgIconModel';
-import FeatureModel from '../model/FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import LinkModel from '../model/LinkModel';
 import NoteModel from '../model/NoteModel';
 import PositionNodeType from '../PositionType';

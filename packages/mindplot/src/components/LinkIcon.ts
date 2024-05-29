@@ -20,8 +20,8 @@ import ImageIcon from './ImageIcon';
 import LinksImage from '../../assets/icons/links.svg';
 import LinkModel from './model/LinkModel';
 import Topic from './Topic';
-import FeatureModel from './model/FeatureModel';
-import ElementModel from './model/formbuilder/ElementModel';
+import FeatureModel from './shared/FeatureModel';
+import ElementModel from './shared/ElementModel';
 
 class LinkIcon extends ImageIcon {
   private _linksModel: LinkModel;

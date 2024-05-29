@@ -18,7 +18,7 @@
 import { $assert, $defined } from '@wisemapping/core-js';
 import Command from '../Command';
 import CommandContext from '../CommandContext';
-import FeatureModel from '../model/FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 
 class RemoveFeatureFromTopicCommand extends Command {
   private _topicId: number;

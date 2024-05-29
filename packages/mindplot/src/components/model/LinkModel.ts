@@ -16,7 +16,7 @@
  *   limitations under the License.
  */
 import { $assert } from '@wisemapping/core-js';
-import FeatureModel from './FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 
 class LinkModel extends FeatureModel {
   constructor(attributes) {

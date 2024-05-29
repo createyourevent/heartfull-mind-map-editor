@@ -17,7 +17,7 @@
  */
 import Command from '../Command';
 import CommandContext from '../CommandContext';
-import FeatureModel from '../model/FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import FeatureType from '../model/FeatureType';
 
 class AddFeatureToTopicCommand extends Command {

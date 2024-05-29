@@ -21,7 +21,7 @@ import { LineType } from '../ConnectionLine';
 import PositionType from '../PositionType';
 import { FontWeightType } from '../FontWeightType';
 import { FontStyleType } from '../FontStyleType';
-import FeatureModel from './FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import Mindmap from './Mindmap';
 import SizeType from '../SizeType';
 

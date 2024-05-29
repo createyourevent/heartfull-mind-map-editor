@@ -1,5 +1,5 @@
 import CheckboxElementModel from './controls/CheckboxElementModel';
-import ElementModel from './ElementModel';
+import ElementModel from '../../shared/ElementModel';
 import { ElementType } from './ElementType';
 import RadioElementModel from './controls/RadioElementModel';
 import TextareaElementModel from './controls/TextareaElementModel';

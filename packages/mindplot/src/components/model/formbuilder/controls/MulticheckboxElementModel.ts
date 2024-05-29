@@ -1,4 +1,4 @@
-import ElementModel from '../ElementModel';
+import ElementModel from '../../../shared/ElementModel';
 import { ElementType } from '../ElementType';
 
 export default class MulticheckboxElementModel extends ElementModel {

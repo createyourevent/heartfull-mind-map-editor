@@ -20,7 +20,7 @@ import EmojiCharIcon from './EmojiCharIcon';
 import SvgImageIcon from './SvgImageIcon';
 import LinkIcon from './LinkIcon';
 import NoteIcon from './NoteIcon';
-import FeatureModel from './model/FeatureModel';
+import FeatureModel from './shared/FeatureModel';
 import Topic from './Topic';
 import SvgIconModel from './model/SvgIconModel';
 import LinkModel from './model/LinkModel';

@@ -1,8 +1,8 @@
 import Topic from '../Topic';
-import FeatureModel from '../model/FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import ImageIcon from '../ImageIcon';
 import Icon from '../Icon';
-import ElementModel from '../model/formbuilder/ElementModel';
+import ElementModel from '../shared/ElementModel';
 
 class FormElementIcon extends ImageIcon implements Icon {
   private _featureModel: FeatureModel;

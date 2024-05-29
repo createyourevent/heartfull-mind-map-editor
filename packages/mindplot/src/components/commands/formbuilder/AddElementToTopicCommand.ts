@@ -1,6 +1,6 @@
 import Command from '../../Command';
 import CommandContext from '../../CommandContext';
-import ElementModel from '../../model/formbuilder/ElementModel';
+import ElementModel from '../../shared/ElementModel';
 import { ElementType } from '../../model/formbuilder/ElementType';
 
 class AddElementToTopicCommand extends Command {

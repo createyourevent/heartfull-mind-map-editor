@@ -14,7 +14,7 @@ import VersionNumber from '../export/freemind/importer/VersionNumber';
 import FreemindIconConverter from './FreemindIconConverter';
 import NoteModel from '../model/NoteModel';
 import FeatureModelFactory from '../model/FeatureModelFactory';
-import FeatureModel from '../model/FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import XMLSerializerFactory from '../persistence/XMLSerializerFactory';
 import { TopicShapeType } from '../model/INodeModel';
 

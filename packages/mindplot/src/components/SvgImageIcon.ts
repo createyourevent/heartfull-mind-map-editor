@@ -23,7 +23,7 @@ import ActionDispatcher from './ActionDispatcher';
 import iconFamily from './model/SvgIconFamily.json';
 import Topic from './Topic';
 import SvgIconModel from './model/SvgIconModel';
-import ElementModel from './model/formbuilder/ElementModel';
+import ElementModel from './shared/ElementModel';
 
 function importAll(r) {
   const images = {};

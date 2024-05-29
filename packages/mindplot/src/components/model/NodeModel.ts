@@ -19,10 +19,10 @@ import { $assert, $defined } from '@wisemapping/core-js';
 import cloneDeep from 'lodash/cloneDeep';
 import INodeModel, { NodeModelType } from './INodeModel';
 import FeatureModelFactory from './FeatureModelFactory';
-import FeatureModel from './FeatureModel';
+import FeatureModel from '../shared/FeatureModel';
 import Mindmap from './Mindmap';
 import FeatureType from './FeatureType';
-import ElementModel from './formbuilder/ElementModel';
+import ElementModel from '../shared/ElementModel';
 import { ElementType } from './formbuilder/ElementType';
 import ElementModelFactory from './formbuilder/ElementModelFactory';
 

@@ -1,9 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
-import { ElementType } from './ElementType';
-import IconModel from '../../IconModel';
+import { ElementType } from '../model/formbuilder/ElementType';
 
-export default class ElementModel extends IconModel {
+export default class ElementModel {
   private _id: string;
 
   private _type: ElementType;
@@ -21,7 +20,6 @@ export default class ElementModel extends IconModel {
   private _attributes: object;
 
   constructor(type: ElementType, attributes: object) {
-    super();
     // Generiere eine eindeutige ID für das Element
     this._id = uuidv4();
     this._type = type;

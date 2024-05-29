@@ -1,7 +1,7 @@
 import FormElementIcon from '../FormElementIcon';
 import TextfieldSvg from '../../../../assets/icons/controls/textarea.svg';
 import Topic from '../../Topic';
-import ElementModel from '../../model/formbuilder/ElementModel';
+import ElementModel from '../../shared/ElementModel';
 import { $notify } from '../../model/ToolbarNotifier';
 import { $msg } from '../../Messages';
 import PersistenceManager from '../../PersistenceManager';

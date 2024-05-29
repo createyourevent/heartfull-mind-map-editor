@@ -19,9 +19,9 @@ import { $assert } from '@wisemapping/core-js';
 import NotesImage from '../../assets/icons/notes.svg';
 import Topic from './Topic';
 import NoteModel from './model/NoteModel';
-import FeatureModel from './model/FeatureModel';
+import FeatureModel from './shared/FeatureModel';
 import ImageIcon from './ImageIcon';
-import ElementModel from './model/formbuilder/ElementModel';
+import ElementModel from './shared/ElementModel';
 
 class NoteIcon extends ImageIcon {
   private _noteModel: NoteModel;

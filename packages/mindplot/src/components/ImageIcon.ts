@@ -19,10 +19,10 @@ import { $assert } from '@wisemapping/core-js';
 import { Group, Image } from '@wisemapping/web2d';
 import IconGroup from './IconGroup';
 import SizeType from './SizeType';
-import FeatureModel from './model/FeatureModel';
+import FeatureModel from './shared/FeatureModel';
 import Icon from './Icon';
 import PositionType from './PositionType';
-import ElementModel from './model/formbuilder/ElementModel';
+import ElementModel from './shared/ElementModel';
 
 abstract class ImageIcon implements Icon {
   private _image: Image;

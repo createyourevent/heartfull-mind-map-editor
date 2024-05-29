@@ -21,10 +21,10 @@ import { Group } from '@wisemapping/web2d';
 import IconGroupRemoveTip from './IconGroupRemoveTip';
 import ImageIcon from './ImageIcon';
 import SizeType from './SizeType';
-import FeatureModel from './model/FeatureModel';
+import FeatureModel from './shared/FeatureModel';
 import Icon from './Icon';
 import PositionType from './PositionType';
-import ElementModel from './model/formbuilder/ElementModel';
+import ElementModel from './shared/ElementModel';
 
 const ORDER_BY_TYPE = new Map<string, number>();
 ORDER_BY_TYPE.set('icon', 0);
