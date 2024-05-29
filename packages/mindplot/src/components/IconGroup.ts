@@ -24,7 +24,7 @@ import SizeType from './SizeType';
 import FeatureModel from './shared/FeatureModel';
 import Icon from './Icon';
 import PositionType from './PositionType';
-import ElementModel from './shared/ElementModel';
+import ElementModel from '../../../formbuilder/ElementModel';
 
 const ORDER_BY_TYPE = new Map<string, number>();
 ORDER_BY_TYPE.set('icon', 0);

@@ -20,7 +20,7 @@ import IconGroup from './IconGroup';
 import FeatureModel from './shared/FeatureModel';
 import PositionType from './PositionType';
 import SizeType from './SizeType';
-import ElementModel from './shared/ElementModel';
+import ElementModel from '../../../formbuilder/ElementModel';
 
 interface Icon {
   getElement(): Group | Image;

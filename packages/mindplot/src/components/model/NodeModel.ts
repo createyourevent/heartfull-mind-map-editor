@@ -22,7 +22,7 @@ import FeatureModelFactory from './FeatureModelFactory';
 import FeatureModel from '../shared/FeatureModel';
 import Mindmap from './Mindmap';
 import FeatureType from './FeatureType';
-import ElementModel from '../shared/ElementModel';
+import ElementModel from '../../../../formbuilder/ElementModel';
 import { ElementType } from './formbuilder/ElementType';
 import ElementModelFactory from './formbuilder/ElementModelFactory';
 

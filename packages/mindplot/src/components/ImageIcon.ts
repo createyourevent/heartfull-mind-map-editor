@@ -22,7 +22,7 @@ import SizeType from './SizeType';
 import FeatureModel from './shared/FeatureModel';
 import Icon from './Icon';
 import PositionType from './PositionType';
-import ElementModel from './shared/ElementModel';
+import ElementModel from '../../../formbuilder/ElementModel';
 
 abstract class ImageIcon implements Icon {
   private _image: Image;

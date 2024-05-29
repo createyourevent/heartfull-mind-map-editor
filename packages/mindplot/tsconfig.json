@@ -24,7 +24,7 @@
     ]
   },
   "include": [
-    "src/**/*", "storybook/src/stories", "libraries",
+    "src/**/*", "storybook/src/stories", "libraries", "../formbuilder/ElementModel.ts",
   ],
   "exclude": [
     "./node_modules",

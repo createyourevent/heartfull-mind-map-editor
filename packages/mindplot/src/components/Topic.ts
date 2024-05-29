@@ -46,7 +46,7 @@ import DragTopic from './DragTopic';
 import ThemeFactory from './theme/ThemeFactory';
 import TopicShape from './shape/TopicShape';
 import TopicShapeFactory from './shape/TopicShapeFactory';
-import ElementModel from './shared/ElementModel';
+import ElementModel from '../../../formbuilder/ElementModel';
 import FormElementIcon from './icons/FormElementIcon';
 import TopicElementFactory from './icons/TopicElementIconFactory';
 import TopicElementIconFactory from './icons/TopicElementIconFactory';

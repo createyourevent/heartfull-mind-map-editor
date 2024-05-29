@@ -24,7 +24,7 @@ import SizeType from './SizeType';
 import Topic from './Topic';
 import ActionDispatcher from './ActionDispatcher';
 import PositionType from './PositionType';
-import ElementModel from './shared/ElementModel';
+import ElementModel from '../../../formbuilder/ElementModel';
 
 class EmojiCharIcon implements Icon {
   private _group: Group;

@@ -21,7 +21,7 @@ import Topic from './Topic';
 import NoteModel from './model/NoteModel';
 import FeatureModel from './shared/FeatureModel';
 import ImageIcon from './ImageIcon';
-import ElementModel from './shared/ElementModel';
+import ElementModel from '../../../formbuilder/ElementModel';
 
 class NoteIcon extends ImageIcon {
   private _noteModel: NoteModel;
