@@ -31,11 +31,6 @@ ORDER_BY_TYPE.set('icon', 0);
 ORDER_BY_TYPE.set('note', 1);
 ORDER_BY_TYPE.set('link', 2);
 
-const ORDER_BY_ELEMENT = new Map<string, number>();
-ORDER_BY_ELEMENT.set('', 0);
-ORDER_BY_ELEMENT.set('', 1);
-ORDER_BY_ELEMENT.set('', 2);
-
 class IconGroup {
   private _icons: Icon[];
 
@@ -62,11 +57,6 @@ class IconGroup {
     this.seIconSize(iconSize, iconSize);
     this._registerListeners();
     this._iconSize = null;
-    this._topicId = topicId;
-  }
-
-  getTopicId(): number {
-    return this._topicId;
   }
 
   setPosition(x: number, y: number): void {
@@ -94,52 +84,77 @@ class IconGroup {
   addIcon(icon: Icon, remove: boolean): void {
     // Order could have change, need to re-add all.
     const icons = this._icons.slice();
-    if (remove) {
-      this._icons.forEach((i) => {
-        this._removeIcon(i);
-      });
-    }
+    this._icons.forEach((i) => {
+      this._removeIcon(i);
+    });
 
     icon.setGroup(this);
     icons.push(icon);
+    this._icons = icons.sort(
+      (a, b) =>
+        ORDER_BY_TYPE.get(a.getFeatureModel().getType())! - ORDER_BY_TYPE.get(b.getFeatureModel().getType())!,
+    );
 
-    // Überprüfen, ob es sich um ein FeatureModel oder ElementModel handelt
-    if (icon.getModel() instanceof FeatureModel) {
-      // Sortieren für FeatureModels
-      this._icons = icons.sort(
-        (a, b) =>
-          ORDER_BY_TYPE.get((a.getModel() as FeatureModel).getType())! -
-          ORDER_BY_TYPE.get((b.getModel() as FeatureModel).getType())!,
-      );
-    } else if (icon.getModel() instanceof ElementModel) {
-      // Keine Sortierung für ElementModels
-      this._icons = icons;
-    } else {
-      // Fehlerbehandlung für andere Typen
-      console.error('Unbekannter Modelltyp');
+    // Add all the nodes back ...
+    this._resize(this._icons.length);
+    this._icons.forEach((i, index) => {
+      this.positionIcon(i, index);
+      const imageShape = i.getElement();
+      this._group.append(imageShape);
+    });
+
+    // Register event for the group ..
+    if (remove) {
+      this._removeTip.decorate(this._topicId, icon);
     }
   }
 
-  private _findIconFromModel(iconModel: FeatureModel | ElementModel): Icon {
+  private _findIconFromModel(iconModel: FeatureModel): Icon {
     let result: Icon | null = null;
 
     this._icons.forEach((icon) => {
-      const elModel = icon.getModel();
+      const elModel = icon.getFeatureModel();
 
-      if ((<FeatureModel> elModel).getId() === (<FeatureModel> iconModel).getId()) {
+      if (elModel.getId() === iconModel.getId()) {
         result = icon;
       }
     });
 
     if (result == null) {
-      throw new Error(`Icon can no be found:${((iconModel as FeatureModel).getId())} Icons:${this._icons}`);
+      throw new Error(`Icon can no be found:${iconModel.getId()} Icons:${this._icons}`);
     }
 
     return result;
   }
 
   /** */
-  removeIconByModel(featureModel: FeatureModel | ElementModel): void {
+  removeFormIconByModel(elementModel: ElementModel): void {
+    $assert(elementModel, 'elementModel can not be null');
+
+    const icon = this._findFormIconFromModel(elementModel);
+    this._removeIcon(icon);
+  }
+
+  private _findFormIconFromModel(iconModel: ElementModel): Icon {
+    let result: Icon | null = null;
+
+    this._icons.forEach((icon) => {
+      const elModel = icon.getElementModel();
+
+      if (elModel.id === iconModel.id) {
+        result = icon;
+      }
+    });
+
+    if (result == null) {
+      throw new Error(`Icon can no be found:${iconModel.id} Icons:${this._icons}`);
+    }
+
+    return result;
+  }
+
+  /** */
+  removeIconByModel(featureModel: FeatureModel): void {
     $assert(featureModel, 'featureModel can not be null');
 
     const icon = this._findIconFromModel(featureModel);
@@ -148,8 +163,7 @@ class IconGroup {
 
   private _removeIcon(icon: Icon): void {
     this._removeTip.close(0);
-    const ic = icon.getElement();
-    this._group.removeChild(ic);
+    this._group.removeChild(icon.getElement());
 
     this._icons = this._icons.filter((i) => i !== icon);
     this._resize(this._icons.length);

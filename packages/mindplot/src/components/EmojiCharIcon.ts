@@ -24,6 +24,7 @@ import SizeType from './SizeType';
 import Topic from './Topic';
 import ActionDispatcher from './ActionDispatcher';
 import PositionType from './PositionType';
+import ElementModel from './model/formbuilder/ElementModel';
 
 class EmojiCharIcon implements Icon {
   private _group: Group;
@@ -88,8 +89,12 @@ class EmojiCharIcon implements Icon {
     actionDispatcher.removeFeatureFromTopic(this._topic.getId(), featureId);
   }
 
-  getModel(): SvgIconModel {
+  getFeatureModel(): SvgIconModel {
     return this._iconModel;
+  }
+
+  getElementModel(): ElementModel {
+    throw new Error('Method not implemented.');
   }
 }
 

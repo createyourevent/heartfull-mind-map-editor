@@ -19,17 +19,15 @@ import Command from '../Command';
 import CommandContext from '../CommandContext';
 import FeatureModel from '../model/FeatureModel';
 import FeatureType from '../model/FeatureType';
-import { ElementType } from '../model/formbuilder/ElementType';
-import FormElementModel from '../model/formbuilder/forms/FormElementModel';
 
 class AddFeatureToTopicCommand extends Command {
   private _topicIds: number[];
 
-  private _type: FeatureType | ElementType;
+  private _featureType: FeatureType;
 
   private _attributes: object;
 
-  private _model: FeatureModel | FormElementModel | undefined;
+  private _featureModel: FeatureModel | null;
 
   /*
    * @classdesc This command class handles do/undo of adding features to topics, e.g. an
@@ -41,43 +39,30 @@ class AddFeatureToTopicCommand extends Command {
    * @extends mindplot.Command
    * @see mindplot.model.FeatureModel and subclasses
    */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  constructor(topicIds: number[], type: FeatureType | ElementType, attributes: object) {
+  constructor(topicIds: number[], featureType: FeatureType, attributes: object) {
     super();
-    if (this.isElementType(type)) {
-      this._type = type;
-    } else {
-      this._type = type;
-    }
-    this._attributes = attributes;
     this._topicIds = topicIds;
-  }
-
-  isElementType(value: FeatureType | ElementType): value is ElementType {
-    return typeof value === 'string' && Object.values(value).includes(value);
+    this._featureType = featureType;
+    this._attributes = attributes;
+    this._featureModel = null;
   }
 
   execute(commandContext: CommandContext): void {
     const topics = commandContext.findTopics(this._topicIds);
     topics.forEach((topic) => {
       // Feature must be created only one time.
-      if (!this._model) {
+      if (!this._featureModel) {
         const model = topic.getModel();
-        this._model = model.createFeature(<FeatureType> this._type, this._attributes);
-        topic.addFeature(this._model);
+        this._featureModel = model.createFeature(this._featureType, this._attributes);
       }
-      if (!this._model) {
-        const model = topic.getModel();
-        this._model = <FormElementModel> model.createElement(<ElementType> this._type, this._attributes);
-        topic.addElement(this._model);
-      }
+      topic.addFeature(this._featureModel);
     });
   }
 
   undoExecute(commandContext: CommandContext) {
     const topics = commandContext.findTopics(this._topicIds);
     topics.forEach((topic) => {
-      topic.removeFeature(this._model!);
+      topic.removeFeature(this._featureModel!);
     });
   }
 }

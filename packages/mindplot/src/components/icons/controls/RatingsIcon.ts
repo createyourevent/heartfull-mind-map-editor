@@ -11,8 +11,8 @@ export default class RatingsIcon extends FormElementIcon {
   static IMAGE_URL = RatingsSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(RatingsIcon.IMAGE_URL, elementModel, topic);
-    this.setModel(elementModel);
+    super(RatingsIcon.IMAGE_URL, topic, featureModel, elementModel);
+    this.setElementModel(elementModel);
     this.setTopic(topic);
   }
 
@@ -20,7 +20,7 @@ export default class RatingsIcon extends FormElementIcon {
     const topic = super.getTopic();
 
     topic.getModel().removeElement();
-    topic.removeElement(<ElementModel> super.getModel());
+    topic.removeElement(super.getElementModel());
 
     // Erhalten Sie das Mindmap aus dem Topic(NodeModel)
     const mindmap = super.getTopic().getModel().getMindmap();

@@ -23,6 +23,7 @@ import ActionDispatcher from './ActionDispatcher';
 import iconFamily from './model/SvgIconFamily.json';
 import Topic from './Topic';
 import SvgIconModel from './model/SvgIconModel';
+import ElementModel from './model/formbuilder/ElementModel';
 
 function importAll(r) {
   const images = {};
@@ -76,8 +77,12 @@ class SvgImageIcon extends ImageIcon {
     return result;
   }
 
-  getModel() {
+  getFeatureModel() {
     return this._featureModel;
+  }
+
+  getElementModel(): ElementModel {
+    throw new Error('Method not implemented.');
   }
 
   private static _getNextFamilyIconId(iconId: string): string {

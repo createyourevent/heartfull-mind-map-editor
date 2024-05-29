@@ -20,7 +20,7 @@ export default class CheckboxIcon extends FormElementIcon {
     const topic = super.getTopic();
 
     topic.getModel().removeElement();
-    topic.removeElement(<ElementModel> super.getModel());
+    topic.removeElement(<ElementModel> super.getFeatureModel());
 
     // Erhalten Sie das Mindmap aus dem Topic(NodeModel)
     const mindmap = super.getTopic().getModel().getMindmap();

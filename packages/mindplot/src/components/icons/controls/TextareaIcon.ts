@@ -12,7 +12,7 @@ export default class TextareaIcon extends FormElementIcon {
 
   constructor(elementModel: ElementModel, topic: Topic) {
     super(TextareaIcon.IMAGE_URL, elementModel, topic);
-    this.setModel(elementModel);
+    this.setElementModel(elementModel);
     this.setTopic(topic);
   }
 
@@ -20,7 +20,7 @@ export default class TextareaIcon extends FormElementIcon {
     const topic = super.getTopic();
 
     topic.getModel().removeElement();
-    topic.removeElement(<ElementModel> super.getModel());
+    topic.removeElement(this.getElementModel());
 
     // Erhalten Sie das Mindmap aus dem Topic(NodeModel)
     const mindmap = super.getTopic().getModel().getMindmap();

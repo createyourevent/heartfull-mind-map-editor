@@ -63,7 +63,9 @@ abstract class ImageIcon implements Icon {
 
   abstract remove();
 
-  abstract getModel(): FeatureModel | ElementModel;
+  abstract getFeatureModel(): FeatureModel;
+
+  abstract getElementModel(): ElementModel;
 
   static SIZE = 90;
 }

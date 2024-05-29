@@ -21,6 +21,7 @@ import Topic from './Topic';
 import NoteModel from './model/NoteModel';
 import FeatureModel from './model/FeatureModel';
 import ImageIcon from './ImageIcon';
+import ElementModel from './model/formbuilder/ElementModel';
 
 class NoteIcon extends ImageIcon {
   private _noteModel: NoteModel;
@@ -57,8 +58,12 @@ class NoteIcon extends ImageIcon {
     }
   }
 
-  getModel(): FeatureModel {
+  getFeatureModel(): FeatureModel {
     return this._noteModel;
+  }
+
+  getElementModel(): ElementModel {
+    throw new Error('Method not implemented.');
   }
 
   static IMAGE_URL = NotesImage;

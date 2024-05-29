@@ -74,7 +74,7 @@ abstract class Topic extends NodeGraph {
     this.closeEditors();
 
     // Update model ...
-    iconGroup.removeIconByModel(_elementModel);
+    iconGroup.removeFormIconByModel(_elementModel);
     this.redraw();
   }
 
@@ -325,7 +325,7 @@ abstract class Topic extends NodeGraph {
     return model.findFeatureById(id);
   }
 
-  removeFeature(featureModel: FeatureModel | ElementModel): void {
+  removeFeature(featureModel: FeatureModel): void {
     $assert(featureModel, 'featureModel could not be null');
 
     // Removing the icon from MODEL

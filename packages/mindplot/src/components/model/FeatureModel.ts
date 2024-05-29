@@ -17,8 +17,9 @@
  */
 import { $assert } from '@wisemapping/core-js';
 import FeatureType from './FeatureType';
+import IconModel from '../IconModel';
 
-class FeatureModel {
+class FeatureModel extends IconModel {
   static _nextId = 0;
 
   private _id: number;
@@ -34,6 +35,7 @@ class FeatureModel {
    * assigns a unique id and the given type to the new model
    */
   constructor(type: FeatureType) {
+    super();
     $assert(type, 'type can not be null');
     this._id = FeatureModel._nextUUID();
 

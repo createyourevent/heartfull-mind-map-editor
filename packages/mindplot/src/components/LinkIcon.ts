@@ -21,6 +21,7 @@ import LinksImage from '../../assets/icons/links.svg';
 import LinkModel from './model/LinkModel';
 import Topic from './Topic';
 import FeatureModel from './model/FeatureModel';
+import ElementModel from './model/formbuilder/ElementModel';
 
 class LinkIcon extends ImageIcon {
   private _linksModel: LinkModel;
@@ -57,8 +58,12 @@ class LinkIcon extends ImageIcon {
     }
   }
 
-  getModel(): FeatureModel {
+  getFeatureModel(): FeatureModel {
     return this._linksModel;
+  }
+
+  getElementModel(): ElementModel {
+    throw new Error('Method not implemented.');
   }
 
   remove() {

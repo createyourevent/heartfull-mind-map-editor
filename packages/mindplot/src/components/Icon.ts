@@ -37,7 +37,9 @@ interface Icon {
 
   remove(): void;
 
-  getModel(): FeatureModel | ElementModel;
+  getFeatureModel(): FeatureModel;
+
+  getElementModel(): ElementModel;
 }
 
 export default Icon;

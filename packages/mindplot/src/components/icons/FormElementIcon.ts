@@ -1,25 +1,35 @@
 import Topic from '../Topic';
-import ElementModel from '../model/formbuilder/ElementModel';
 import FeatureModel from '../model/FeatureModel';
 import ImageIcon from '../ImageIcon';
+import Icon from '../Icon';
+import ElementModel from '../model/formbuilder/ElementModel';
 
-class FormElementIcon extends ImageIcon {
-  private _model: FeatureModel | ElementModel;
+class FormElementIcon extends ImageIcon implements Icon {
+  private _featureModel: FeatureModel;
+
+  private _elementModel: ElementModel;
 
   private _topic: Topic;
 
-  constructor(url: string, elementModel: ElementModel, topic: Topic) {
+  constructor(url: string, topic: Topic, featureModel: FeatureModel, elementModel: ElementModel) {
     super(url);
-    this._model = elementModel;
+    this._featureModel = featureModel;
+    this._elementModel = elementModel;
     this._topic = topic;
   }
 
-  getModel(): FeatureModel | ElementModel {
-    return this._model;
+  getFeatureModel(): FeatureModel {
+    return this._featureModel;
   }
 
-  setModel(elementModel: ElementModel): void {
-    this._model = elementModel;
+  getElementModel(): ElementModel {
+    return this._elementModel;
+  }
+
+  setElementModel(elementModel: ElementModel): void {
+    if (elementModel instanceof ElementModel) {
+      this._elementModel = elementModel;
+    }
   }
 
   getTopic(): Topic {

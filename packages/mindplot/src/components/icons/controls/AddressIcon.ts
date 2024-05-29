@@ -12,7 +12,7 @@ export default class AddressIcon extends FormElementIcon {
 
   constructor(elementModel: ElementModel, topic: Topic) {
     super(AddressIcon.IMAGE_URL, elementModel, topic);
-    this.setModel(elementModel);
+    this.setElementModel(elementModel);
     this.setTopic(topic);
   }
 
@@ -20,7 +20,7 @@ export default class AddressIcon extends FormElementIcon {
     const topic = super.getTopic();
 
     topic.getModel().removeElement();
-    topic.removeElement(<ElementModel> super.getModel());
+    topic.removeFormElement(<ElementModel> super.getFeatureModel());
 
     // Erhalten Sie das Mindmap aus dem Topic(NodeModel)
     const mindmap = super.getTopic().getModel().getMindmap();
