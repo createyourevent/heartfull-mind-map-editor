@@ -325,12 +325,16 @@ abstract class Topic extends NodeGraph {
     return model.findFeatureById(id);
   }
 
-  removeFeature(featureModel: FeatureModel): void {
+  removeFeature(featureModel: FeatureModel | ElementModel): void {
     $assert(featureModel, 'featureModel could not be null');
 
     // Removing the icon from MODEL
     const model = this.getModel();
-    model.removeFeature(featureModel);
+    if (featureModel instanceof ElementModel) {
+      model.removeElement();
+    } else {
+      model.removeFeature(featureModel);
+    }
 
     // Removing the icon from UI
     const iconGroup = this.getIconGroup();

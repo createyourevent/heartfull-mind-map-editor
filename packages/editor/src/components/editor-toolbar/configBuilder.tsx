@@ -68,13 +68,16 @@ import TextareaIcon from '../../../images/controls/textarea.svg';
 import CheckboxIcon from '../../../images/controls/checkbox.svg';
 import RadioIcon from '../../../images/controls/radio.svg';
 import SelectIcon from '../../../images/controls/select.svg';
+import OptionIcon from '../../../images/controls/selectItem.svg';
 import EditorIcon from '../../../images/controls/editor.svg';
 import AddressIcon from '../../../images/controls/address.svg';
 import ChipsIcon from '../../../images/controls/chips.svg';
 import MulticheckboxIcon from '../../../images/controls/multicheckbox.svg';
 import RatingsIcon from '../../../images/controls/ratings.svg';
 import TimeIcon from '../../../images/controls/time.svg';
+import ShowXMLIcon from '../../../images/showXml.svg';
 
+import { XMLSerializerFormBuilder } from '@wisemapping/mindplot';
 const keyTooltip = (msg: string, key: string): string => {
   const isMac = window.navigator.platform.toUpperCase().indexOf('MAC') >= 0;
   return `${msg} (${isMac ? '⌘' : 'Ctrl'} + ${key})`;
@@ -83,6 +86,20 @@ const keyTooltip = (msg: string, key: string): string => {
 export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionConfig[] {
   const modelBuilder = new NodePropertyValueModelBuilder(model.getDesigner());
 
+  const formbuilderXMLConfiguration: ActionConfig = {
+    icon: <img src={ShowXMLIcon} alt="Show XML Formbuilder" width="24" height="24" />,
+    tooltip: intl.formatMessage({
+      id: 'editor-panel.tooltip-save-form',
+      defaultMessage: 'Show XML Formbuilder',
+    }),
+    onClick: () => {
+      const currentMindmap = model.getDesigner().getMindmap();
+      const xmlSerializer = new XMLSerializerFormBuilder();
+      const xmlDocument = xmlSerializer.toXML(currentMindmap);
+      const formElementsXML = xmlDocument.documentElement.outerHTML;
+      console.log(formElementsXML);
+    }  
+  }
 
   const formsConfiguration: ActionConfig = {
     icon: <img src={HtmlIcon} alt="Html Elements" width="24" height="24" />,
@@ -98,6 +115,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Page',
         }),
         onClick: () => {
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'page', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -108,6 +133,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Form',
         }),
         onClick: () => {
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'form', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -118,6 +151,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Fieldset',
         }),
         onClick: () => {
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'fieldset', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -128,6 +169,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Tabs Menu',
         }),
         onClick: () => {
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'tabs', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -139,7 +188,7 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
     icon: <img src={ControlsIcon} alt="Html Control Elements" width="24" height="24" />,
     tooltip: intl.formatMessage({
       id: 'editor-panel.tooltip-html-control-elements',
-      defaultMessage: 'Add Form Elements',
+      defaultMessage: 'Add Controls Elements',
     }),
     options: [
       {
@@ -218,7 +267,32 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Select',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen einer Select-Option
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'select', {}
+          );
+        },
+        selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
+      },
+      {
+        icon: <img src={OptionIcon} />,
+        tooltip: intl.formatMessage({
+          id: 'editor-panel.tooltip-add-option-item',
+          defaultMessage: 'Add Select Item',
+        }),
+        onClick: () => {
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'selectItem', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -229,7 +303,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Editor',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen eines Editors
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'editor', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -240,7 +321,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Address',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen einer Adresse
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'address', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -251,7 +339,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Chips',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen von Chips
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'chips', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -262,7 +357,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Multicheckbox',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen einer Multicheckbox
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'multicheckbox', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -273,7 +375,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Ratings',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen von Bewertungen
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'ratings', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -284,7 +393,14 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
           defaultMessage: 'Add Time',
         }),
         onClick: () => {
-          // Logik für das Hinzufügen einer Zeitauswahl
+          const selectedTopicIds = model.getDesignerModel()!.filterSelectedTopics();
+          const ids: number[] = [];
+          selectedTopicIds.forEach((topic) => {
+            ids.push(topic.getId());
+          });
+          model.getDesigner().getActionDispatcher().addElementToTopic(
+            ids, 'time', {}
+          );
         },
         selected: () => modelBuilder.getTopicShapeModel().getValue() === 'rounded rectangle',
       },
@@ -800,6 +916,7 @@ export function buildEditorPanelConfig(model: Editor, intl: IntlShape): ActionCo
     addRelationConfiguration,
     editThemeConfiguration,
     formsConfiguration,
-    controlsConfiguration
+    controlsConfiguration,
+    formbuilderXMLConfiguration
   ];
 }

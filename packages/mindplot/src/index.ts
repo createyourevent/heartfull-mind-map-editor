@@ -47,6 +47,7 @@ import WidgetBuilder, { WidgetEventType } from './components/WidgetBuilder';
 import { buildDesigner } from './components/DesignerBuilder';
 import { $notify } from './components/model/ToolbarNotifier';
 import XMLSerializerFactory from './components/persistence/XMLSerializerFactory';
+import XMLSerializerFormBuilder from './components/persistence/XMLSerializerFormBuilder';
 
 declare global {
   // Todo: There are some global references that needs to be removed inside mindplot.
@@ -64,6 +65,7 @@ if (!customElements.get('mindplot-component')) {
 }
 
 export {
+  XMLSerializerFormBuilder,
   Mindmap,
   Designer,
   DesignerModel,

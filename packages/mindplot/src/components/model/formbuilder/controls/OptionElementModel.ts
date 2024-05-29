@@ -1,7 +1,7 @@
 import ElementModel from '../ElementModel';
 import { ElementType } from '../ElementType';
 
-export default class SelectElementModel extends ElementModel {
+export default class OptionElementModel extends ElementModel {
   private _name: string;
 
   private _defaultValue: string;

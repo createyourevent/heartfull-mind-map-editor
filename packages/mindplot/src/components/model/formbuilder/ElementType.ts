@@ -4,6 +4,7 @@ export type ElementType =
   | 'checkbox'
   | 'radio'
   | 'select'
+  | 'option'
   | 'editor'
   | 'address'
   | 'chips'
@@ -14,4 +15,5 @@ export type ElementType =
   | 'form'
   | 'page'
   | 'fieldset'
-  | 'tabs';
+  | 'tabs'
+  | 'tab';
