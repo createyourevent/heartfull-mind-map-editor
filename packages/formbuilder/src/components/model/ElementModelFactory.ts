@@ -17,6 +17,7 @@ import FieldsetElementModel from './forms/FieldsetElementModel';
 import TabsElementModel from './forms/TabsElementModel';
 import TabElementModel from './forms/TabElementModel';
 import OptionElementModel from './controls/OptionElementModel';
+import ElementModel from './ElementModel';
 
 export default class ElementModelFactory {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

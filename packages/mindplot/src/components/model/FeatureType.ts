@@ -15,6 +15,6 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-type FeatureType = 'note' | 'link' | 'icon' | 'eicon';
+type FeatureType = 'note' | 'link' | 'icon' | 'eicon' | 'empty';
 
 export default FeatureType;

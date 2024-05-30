@@ -1,18 +1,17 @@
 import FormElementIcon from '../FormElementIcon';
 import FieldsetSvg from '../../../../assets/icons/forms/fieldset.svg';
-import Topic from '../../Topic';
-import ElementModel from '../../../../../formbuilder/ElementModel';
-import PersistenceManager from '../../PersistenceManager';
-import { $msg } from '../../Messages';
-import { $notify } from '../../model/ToolbarNotifier';
+import { $msg } from '@mindplot/components/Messages';
+import { Topic, PersistenceManager, $notify } from '@mindplot/index';
+import FeatureModel from '@wisemapping/mindplot/dist/mindplot/src/components/model/FeatureModel';
+import ElementModel from '../../model/ElementModel';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default class FieldsetIcon extends FormElementIcon {
   static IMAGE_URL = FieldsetSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(FieldsetIcon.IMAGE_URL, elementModel, topic);
-    this.setModel(elementModel);
+    super(FieldsetIcon.IMAGE_URL, topic, new FeatureModel('empty'), elementModel);
+    this.setElementModel(elementModel);
     this.setTopic(topic);
   }
 

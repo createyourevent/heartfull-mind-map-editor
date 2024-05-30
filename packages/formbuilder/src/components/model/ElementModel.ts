@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
-import { ElementType } from './formbuilder/ElementType';
+import { ElementType } from './ElementType';
+
 
 export default class ElementModel {
   private _id: string;

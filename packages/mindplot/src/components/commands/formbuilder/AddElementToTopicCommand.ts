@@ -1,7 +1,5 @@
 import Command from '../../Command';
 import CommandContext from '../../CommandContext';
-import ElementModel from '../../../../../formbuilder/ElementModel';
-import { ElementType } from '../../model/formbuilder/ElementType';
 
 class AddElementToTopicCommand extends Command {
   private _topicIds: number[];

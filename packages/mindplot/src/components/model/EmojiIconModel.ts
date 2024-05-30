@@ -16,7 +16,7 @@
  *   limitations under the License.
  */
 import { $assert } from '@wisemapping/core-js';
-import FeatureModel from '../shared/FeatureModel';
+import FeatureModel from './FeatureModel';
 
 class EmojiIconModel extends FeatureModel {
   constructor(attributes) {

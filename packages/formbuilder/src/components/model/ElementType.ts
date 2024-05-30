@@ -1,3 +1,4 @@
+// ElementType.ts
 export type ElementType =
   | 'textfield'
   | 'textarea'
@@ -17,3 +18,5 @@ export type ElementType =
   | 'fieldset'
   | 'tabs'
   | 'tab';
+
+export default ElementType;

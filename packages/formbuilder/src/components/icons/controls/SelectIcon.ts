@@ -1,18 +1,18 @@
 import FormElementIcon from '../FormElementIcon';
 import SelectSvg from '../../../../assets/icons/controls/select.svg';
-import Topic from '../../Topic';
-import ElementModel from '../../../../../formbuilder/ElementModel';
-import PersistenceManager from '../../PersistenceManager';
-import { $msg } from '../../Messages';
-import { $notify } from '../../model/ToolbarNotifier';
+import { $msg } from '@mindplot/components/Messages';
+import { Topic, PersistenceManager, $notify } from '@mindplot/index';
+import FeatureModel from '@wisemapping/mindplot/dist/mindplot/src/components/model/FeatureModel';
+import ElementModel from '../../model/ElementModel';
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default class SelectIcon extends FormElementIcon {
   static IMAGE_URL = SelectSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(SelectIcon.IMAGE_URL, elementModel, topic);
-    this.setModel(elementModel);
+    super(SelectIcon.IMAGE_URL, topic, new FeatureModel('empty'), elementModel);
+    this.setElementModel(elementModel);
     this.setTopic(topic);
   }
 

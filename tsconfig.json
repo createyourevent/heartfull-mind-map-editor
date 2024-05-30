@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@core-js/*": ["packages/core-js/src/*"],
+      "@mindplot/*": ["packages/mindplot/src/*"],
+      "@formbuilder/*": ["packages/formbuilder/src/*"],
+      "@editor/*": ["packages/editor/src/*"]
+    }
+  }
+}

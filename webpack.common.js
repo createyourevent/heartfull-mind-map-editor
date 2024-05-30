@@ -1,11 +1,15 @@
+const path = require('path');
+
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
+            '@core-js': path.resolve(__dirname, 'packages/core-js/src'),
             '@mindplot': path.resolve(__dirname, 'packages/mindplot/src'),
             '@formbuilder': path.resolve(__dirname, 'packages/formbuilder/src'),
+            '@mindplot': path.resolve(__dirname, 'packages/editor/src'),
         },
     },
     optimization: {

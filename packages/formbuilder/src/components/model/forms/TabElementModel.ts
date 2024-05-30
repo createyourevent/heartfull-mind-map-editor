@@ -1,4 +1,4 @@
-import ElementModel from '../../ElementModel';
+import ElementModel from '../ElementModel';
 import { ElementType } from '../ElementType';
 
 export default class TabElementModel extends ElementModel {

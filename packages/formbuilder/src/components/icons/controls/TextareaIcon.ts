@@ -1,17 +1,17 @@
 import FormElementIcon from '../FormElementIcon';
 import TextfieldSvg from '../../../../assets/icons/controls/textarea.svg';
-import Topic from '../../Topic';
-import ElementModel from '../../../../../formbuilder/ElementModel';
-import { $notify } from '../../model/ToolbarNotifier';
-import { $msg } from '../../Messages';
-import PersistenceManager from '../../PersistenceManager';
+import { $msg } from '@mindplot/components/Messages';
+import { Topic, PersistenceManager, $notify } from '@mindplot/index';
+import FeatureModel from '@wisemapping/mindplot/dist/mindplot/src/components/model/FeatureModel';
+import ElementModel from '../../model/ElementModel';
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default class TextareaIcon extends FormElementIcon {
   static IMAGE_URL = TextfieldSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(TextareaIcon.IMAGE_URL, elementModel, topic);
+    super(TextareaIcon.IMAGE_URL, topic, new FeatureModel('empty'), elementModel);
     this.setElementModel(elementModel);
     this.setTopic(topic);
   }

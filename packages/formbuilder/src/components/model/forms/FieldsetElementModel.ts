@@ -1,3 +1,4 @@
+import ElementModel from '../ElementModel';
 import { ElementType } from '../ElementType';
 
 export default class FieldsetElementModel extends ElementModel {

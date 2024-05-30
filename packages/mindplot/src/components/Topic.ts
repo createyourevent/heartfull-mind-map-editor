@@ -45,10 +45,6 @@ import DragTopic from './DragTopic';
 import ThemeFactory from './theme/ThemeFactory';
 import TopicShape from './shape/TopicShape';
 import TopicShapeFactory from './shape/TopicShapeFactory';
-import FormElementIcon from './icons/FormElementIcon';
-import TopicElementFactory from './icons/TopicElementIconFactory';
-import TopicElementIconFactory from './icons/TopicElementIconFactory';
-import { ElementModel } from './ElementModel';
 
 const ICON_SCALING_FACTOR = 1.3;
 

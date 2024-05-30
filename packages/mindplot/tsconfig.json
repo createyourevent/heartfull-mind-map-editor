@@ -18,13 +18,20 @@
     "noUnusedLocals": true,
     "strictFunctionTypes": true,
 
+    "baseUrl": ".",
+    "paths": {
+      "@core-js/*": ["packages/core-js/src/*"],
+      "@mindplot/*": ["packages/mindplot/src/*"],
+      "@formbuilder/*": ["packages/formbuilder/src/*"],
+      "@editor/*": ["packages/editor/src/*"]
+    },
     
     "rootDirs": [
       "src",
     ]
   },
   "include": [
-    "src/**/*", "storybook/src/stories", "libraries", "../formbuilder/ElementModel.ts",
+    "packages/formbuilder/src/**/*", "storybook/src/stories", "libraries",
   ],
   "exclude": [
     "./node_modules",

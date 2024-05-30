@@ -1,5 +1,9 @@
+import Icon from "@mindplot/components/Icon";
+import ImageIcon from "@mindplot/components/ImageIcon";
+import { Topic } from "@mindplot/index";
+import FeatureModel from "@wisemapping/mindplot/dist/mindplot/src/components/model/FeatureModel";
 import ElementModel from "../model/ElementModel";
-import FeatureModel from "@mindplot/";
+
 
 
 class FormElementIcon extends ImageIcon implements Icon {
