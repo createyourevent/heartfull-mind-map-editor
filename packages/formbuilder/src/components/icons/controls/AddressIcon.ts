@@ -1,17 +1,13 @@
-import FormElementIcon from '../FormElementIcon';
-import AddressSvg from '../../../../assets/icons/controls/address.svg';
-import Topic from '../../Topic';
-import ElementModel from '../../../../../formbuilder/ElementModel';
-import PersistenceManager from '../../PersistenceManager';
-import { $msg } from '../../Messages';
-import { $notify } from '../../model/ToolbarNotifier';
+import ElementModel from "../../model/ElementModel";
+import FormElementIcon from "../FormElementIcon";
+import AddressSvg from "../../../../assets/icons/address.svg";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default class AddressIcon extends FormElementIcon {
   static IMAGE_URL = AddressSvg;
 
   constructor(elementModel: ElementModel, topic: Topic) {
-    super(AddressIcon.IMAGE_URL, elementModel, topic);
+    super(AddressIcon.IMAGE_URL, topic, featureModel, elementModel);
     this.setElementModel(elementModel);
     this.setTopic(topic);
   }

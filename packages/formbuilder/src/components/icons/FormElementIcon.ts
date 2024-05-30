@@ -1,8 +1,6 @@
-import Topic from '../Topic';
-import FeatureModel from '../shared/FeatureModel';
-import ImageIcon from '../ImageIcon';
-import Icon from '../Icon';
-import ElementModel from '../../../../formbuilder/ElementModel';
+import ElementModel from "../model/ElementModel";
+import FeatureModel from "@mindplot/";
+
 
 class FormElementIcon extends ImageIcon implements Icon {
   private _featureModel: FeatureModel;

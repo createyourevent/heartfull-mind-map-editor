@@ -3,6 +3,10 @@
 module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        alias: {
+            '@mindplot': path.resolve(__dirname, 'packages/mindplot/src'),
+            '@formbuilder': path.resolve(__dirname, 'packages/formbuilder/src'),
+        },
     },
     optimization: {
         usedExports: true,

@@ -12,9 +12,6 @@ const prodConfig = {
   },
   resolve: {
     extensions: ['.ts', '.js'],
-    alias: {
-      '@formbuilder': path.resolve(__dirname, 'src/components'),
-    },
   },
   entry: {
     formbuilder: './src/index.ts',
