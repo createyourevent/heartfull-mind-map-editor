@@ -37,7 +37,6 @@ import LayoutManager from './layout/LayoutManager';
 import NoteModel from './model/NoteModel';
 import LinkModel from './model/LinkModel';
 import SizeType from './SizeType';
-import FeatureModel from './shared/FeatureModel';
 import PositionType from './PositionType';
 import Icon from './Icon';
 import { FontStyleType } from './FontStyleType';
@@ -46,10 +45,10 @@ import DragTopic from './DragTopic';
 import ThemeFactory from './theme/ThemeFactory';
 import TopicShape from './shape/TopicShape';
 import TopicShapeFactory from './shape/TopicShapeFactory';
-import ElementModel from '../../../formbuilder/ElementModel';
 import FormElementIcon from './icons/FormElementIcon';
 import TopicElementFactory from './icons/TopicElementIconFactory';
 import TopicElementIconFactory from './icons/TopicElementIconFactory';
+import { ElementModel } from './ElementModel';
 
 const ICON_SCALING_FACTOR = 1.3;
 

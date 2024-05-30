@@ -6661,6 +6661,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@wisemapping/formbuilder@workspace:packages/formbuilder":
+  version: 0.0.0-use.local
+  resolution: "@wisemapping/formbuilder@workspace:packages/formbuilder"
+  languageName: unknown
+  linkType: soft
+
 "@wisemapping/mindplot@workspace:*, @wisemapping/mindplot@workspace:packages/mindplot":
   version: 0.0.0-use.local
   resolution: "@wisemapping/mindplot@workspace:packages/mindplot"
@@ -19463,6 +19469,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path@npm:^0.12.7":
+  version: 0.12.7
+  resolution: "path@npm:0.12.7"
+  dependencies:
+    process: ^0.11.1
+    util: ^0.10.3
+  checksum: 5dedb71e78fc008fcba797defc0b4e1cf06c1f18e0a631e03ba5bb505136f587ff017afc14f9a3d481cbe77aeedff7dc0c1d2ce4d820c1ebf3c4281ca49423a1
+  languageName: node
+  linkType: hard
+
 "pause-stream@npm:0.0.11":
   version: 0.0.11
   resolution: "pause-stream@npm:0.0.11"
@@ -20015,7 +20031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"process@npm:^0.11.10":
+"process@npm:^0.11.1, process@npm:^0.11.10":
   version: 0.11.10
   resolution: "process@npm:0.11.10"
   checksum: bfcce49814f7d172a6e6a14d5fa3ac92cc3d0c3b9feb1279774708a719e19acd673995226351a082a9ae99978254e320ccda4240ddc474ba31a76c79491ca7c3
@@ -24329,6 +24345,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"util@npm:^0.10.3":
+  version: 0.10.4
+  resolution: "util@npm:0.10.4"
+  dependencies:
+    inherits: 2.0.3
+  checksum: 913f9a90d05a60e91f91af01b8bd37e06bca4cc02d7b49e01089f9d5b78be2fffd61fb1a41b517de7238c5fc7337fa939c62d1fb4eb82e014894c7bee6637aaf
+  languageName: node
+  linkType: hard
+
 "util@npm:^0.11.0":
   version: 0.11.1
   resolution: "util@npm:0.11.1"
@@ -24795,6 +24820,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"webpack-merge@npm:^5.10.0":
+  version: 5.10.0
+  resolution: "webpack-merge@npm:5.10.0"
+  dependencies:
+    clone-deep: ^4.0.1
+    flat: ^5.0.2
+    wildcard: ^2.0.0
+  checksum: 1fe8bf5309add7298e1ac72fb3f2090e1dfa80c48c7e79fa48aa60b5961332c7d0d61efa8851acb805e6b91a4584537a347bc106e05e9aec87fa4f7088c62f2f
+  languageName: node
+  linkType: hard
+
 "webpack-merge@npm:^5.7.3":
   version: 5.8.0
   resolution: "webpack-merge@npm:5.8.0"
@@ -25173,6 +25209,7 @@ __metadata:
     jest-webpack: ^0.5.1
     lerna: ^8.1.2
     lint-staged: ^15.2.2
+    path: ^0.12.7
     prettier: ^3.2.5
     start-server-and-test: ^2.0.3
     style-loader: ^3.3.4
@@ -25185,6 +25222,7 @@ __metadata:
     webpack-bundle-analyzer: ^4.10.1
     webpack-cli: ^5.1.4
     webpack-dev-server: ^5.0.4
+    webpack-merge: ^5.10.0
   languageName: unknown
   linkType: soft
 

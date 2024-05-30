@@ -96,5 +96,9 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "webpack-merge": "^5.10.0"
   }
 }
